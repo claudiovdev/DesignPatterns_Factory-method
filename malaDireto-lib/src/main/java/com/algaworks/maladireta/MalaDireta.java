@@ -3,11 +3,13 @@ package com.algaworks.maladireta;
 import com.algaworks.maladireta.contato.Contato;
 import com.algaworks.maladireta.contato.Contatos;
 
+import java.util.List;
+
 public abstract class MalaDireta {
 
     protected abstract Contatos criarContatos();
     public boolean enviarEmail(String mensagem){
-
+        List<Contato> contatos = criarContatos().listarContatos();
 
         System.out.println("Conectando no servidor SMTP...");
         System.out.println("Mensagem a ser enviada: " + mensagem);
